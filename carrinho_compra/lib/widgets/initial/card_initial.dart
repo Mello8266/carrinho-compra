@@ -1,7 +1,29 @@
+import 'package:carrinho_compra/modal/card_carrinho.dart';
 import 'package:carrinho_compra/widgets/style.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Cardinitial extends StatelessWidget{
+  CardCarrinho cardCarrinho;
+  
+  Cardinitial({
+    required this.cardCarrinho,
+    super.key
+  });
+
+
+  String format(){
+    String nFormat = cardCarrinho.total.toString();
+
+    nFormat = nFormat.replaceAllMapped('.', (match) => ',');
+
+    if(cardCarrinho.total > 999){
+      nFormat = nFormat.replaceRange(1, 1, '.');
+    }
+
+    return nFormat;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,9 +36,9 @@ class Cardinitial extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            textCardInitialTittle(text: "Compra do mês"),
+            textCardInitialTittle(text: cardCarrinho.title),
         
-            Center(child: textCardInitialPrice(text: "RS 1.800,00")),
+            Center(child: textCardInitialPrice(text: 'R\$ ${format()}')),
         
             SizedBox()
         
