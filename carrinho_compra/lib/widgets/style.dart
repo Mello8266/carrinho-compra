@@ -9,3 +9,28 @@ const color = {
   "amarelo": Color.fromRGBO(255, 222, 89, 100),
   "white": Colors.white
 };
+
+// Text Style
+Text textCardInitialTittle({required String text}){
+  return Text(
+    text,
+    textAlign: TextAlign.center,
+    style: const TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.w700,
+      fontFamily: "DMSans"
+    ),
+  );
+}
+
+Text textCardInitialPrice({required String text}){
+  return Text(
+    text,
+    textAlign: TextAlign.center,
+    style: const TextStyle(
+      fontSize: 16,
+      fontFamily: "DMSans",
+      fontWeight: FontWeight.w400
+    ),
+  );
+}

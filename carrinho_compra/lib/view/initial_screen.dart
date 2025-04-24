@@ -1,8 +1,10 @@
 import 'package:carrinho_compra/view/card_screen.dart';
 import 'package:carrinho_compra/widgets/floating_button.dart';
+import 'package:carrinho_compra/widgets/initial/card_initial.dart';
 import 'package:carrinho_compra/widgets/search_bar.dart';
 import 'package:carrinho_compra/widgets/style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class InitialScreen extends StatefulWidget {
   const InitialScreen({super.key});
@@ -33,13 +35,21 @@ class _InitialScreenState extends State<InitialScreen> {
         child: Column(
           children: <Widget>[
             // Barra de pesquisa
-             Expanded(
-              flex: 0,
-              child: SearchBars(width: width, height: height,)
-            ),
+            SizedBox(height: height *0.06, child: SearchBars(width: width, height: height,)),
+
+            SizedBox(height: 10,),
         
             // Cards
-            Expanded(flex: 4, child: ListView())
+            Expanded(flex: 11, child: GridView.count(
+              crossAxisCount: 2,
+              children: List.generate(10, (index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Cardinitial(),
+                );
+              }
+              )
+            ))
           ],
         ),
       ),

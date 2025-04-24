@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         textSelectionTheme: const TextSelectionThemeData(
           cursorColor: Colors.black,
           selectionColor: Colors.black,
-          selectionHandleColor: Colors.black,
+          selectionHandleColor: Colors.grey,
         ),
       ),
       title: 'Carrinho de compras',

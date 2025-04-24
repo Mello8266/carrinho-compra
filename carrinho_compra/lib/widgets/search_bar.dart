@@ -1,6 +1,7 @@
 import 'package:carrinho_compra/widgets/style.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class SearchBars extends StatelessWidget{
   double width;
   double height;
@@ -26,16 +27,16 @@ class SearchBars extends StatelessWidget{
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16)
           ),
-
+          
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
             borderSide: const BorderSide(color: Colors.black)
           )
         ),
         
-
+          
         style: const TextStyle(
-          fontSize: 18,
+          fontSize: 16,
         ),
       ),
     );
