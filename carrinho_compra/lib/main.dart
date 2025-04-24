@@ -13,7 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: color["backgroundScreen"]
+        scaffoldBackgroundColor: color["backgroundScreen"],
+        primarySwatch: Colors.grey,
+        textSelectionTheme: const TextSelectionThemeData(
+          cursorColor: Colors.black,
+          selectionColor: Colors.black,
+          selectionHandleColor: Colors.black,
+        ),
       ),
       title: 'Carrinho de compras',
       home: const InitialScreen()
