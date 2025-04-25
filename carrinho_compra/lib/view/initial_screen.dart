@@ -1,7 +1,7 @@
 import 'package:carrinho_compra/modal/card_carrinho.dart';
 import 'package:carrinho_compra/repositore/card_list.dart';
 import 'package:carrinho_compra/view/card_screen.dart';
-import 'package:carrinho_compra/widgets/floating_button.dart';
+import 'package:carrinho_compra/widgets/initial/floating_button.dart';
 import 'package:carrinho_compra/widgets/initial/card_initial.dart';
 import 'package:carrinho_compra/widgets/search_bar.dart';
 import 'package:carrinho_compra/widgets/style.dart';
@@ -35,9 +35,9 @@ class _InitialScreenState extends State<InitialScreen> {
         backgroundColor: color["backgroundCard"],
       ),
 
-      floatingActionButton: FloatingButton(
+      floatingActionButton: FloatingButtonInitial(
         callView: () => Navigator.push(context, 
-          MaterialPageRoute(builder: (_) => const CardScreen())
+          MaterialPageRoute(builder: (_) => CardScreen())
         )
       ),
       body: Padding(

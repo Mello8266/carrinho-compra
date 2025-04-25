@@ -16,6 +16,7 @@ class SearchBars extends StatelessWidget{
         borderRadius: BorderRadius.circular(16)
       ),
       child: TextFormField(
+        expands: false,
         decoration: InputDecoration(
           // Icons
           prefixIcon: const Icon(Icons.search),
