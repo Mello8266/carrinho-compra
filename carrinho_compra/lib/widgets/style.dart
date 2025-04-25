@@ -70,3 +70,14 @@ Text textCard({required String text}){
     ),
   );
 }
+
+Text textPopUp({required String text}){
+  return Text(
+    text,
+    style: const TextStyle(
+      fontFamily: "DMSans",
+      fontSize: 18,
+      fontWeight: FontWeight.w700
+    ),
+  );
+}

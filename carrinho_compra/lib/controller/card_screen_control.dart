@@ -1,5 +1,5 @@
 class CardScreenControl{
-
+  // formatar data
   String formatDate(){
     String day = DateTime.now().day.toString();
     String month = DateTime.now().month.toString();

@@ -1,6 +1,7 @@
 import 'package:carrinho_compra/controller/card_screen_control.dart';
 import 'package:carrinho_compra/repositore/item_list.dart';
 import 'package:carrinho_compra/widgets/card/card_item.dart';
+import 'package:carrinho_compra/widgets/card/pop_up.dart';
 import 'package:carrinho_compra/widgets/card/price_widget.dart';
 import 'package:carrinho_compra/widgets/initial/floating_button.dart';
 import 'package:carrinho_compra/widgets/search_bar.dart';
@@ -17,6 +18,7 @@ class CardScreen extends StatefulWidget {
 class _CardScreenState extends State<CardScreen> {
   final CardScreenControl controllView = CardScreenControl();
   final ItemList itemList = ItemList();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class _CardScreenState extends State<CardScreen> {
         title: textAppBar(text: "Compra de ${controllView.formatDate()}"),
         backgroundColor: color["backgroundCard"],
       ),
-      floatingActionButton: FloatingButtonInitial(callView: () { },),
+      floatingActionButton: FloatingButtonInitial(callView: () => PopUp.popUp(context),),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       body: Column(
         children: [
