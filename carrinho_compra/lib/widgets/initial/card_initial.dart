@@ -17,7 +17,7 @@ class Cardinitial extends StatelessWidget{
 
     nFormat = nFormat.replaceAllMapped('.', (match) => ',');
 
-    if(cardCarrinho.total > 999){
+    if(cardCarrinho.total !> 999){
       nFormat = nFormat.replaceRange(1, 1, '.');
     }
 
@@ -36,7 +36,7 @@ class Cardinitial extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            textCardInitialTittle(text: cardCarrinho.title),
+            textCardInitialTittle(text: cardCarrinho.title!),
         
             Center(child: textCardInitialPrice(text: 'R\$ ${format()}')),
         

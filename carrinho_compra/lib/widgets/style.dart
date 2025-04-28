@@ -34,3 +34,50 @@ Text textCardInitialPrice({required String text}){
     ),
   );
 }
+
+// Text AppBar
+Text textAppBar({required String text}){
+  return Text(
+    text,
+    style: const TextStyle(
+      fontSize: 20,
+      fontFamily: "DMSans",
+      fontWeight: FontWeight.w700
+    ),
+  );
+}
+
+// Text price
+Text textPrice({required String text}){
+  return Text(
+    text,
+    style: const TextStyle(
+      fontFamily: "DMSans",
+      fontSize: 16,
+      fontWeight: FontWeight.w700
+    ),
+  );
+}
+
+// Text card
+Text textCard({required String text}){
+  return Text(
+    text,
+    style: const TextStyle(
+      fontFamily: "DMSans",
+      fontSize: 14,
+      fontWeight: FontWeight.w700
+    ),
+  );
+}
+
+Text textPopUp({required String text}){
+  return Text(
+    text,
+    style: const TextStyle(
+      fontFamily: "DMSans",
+      fontSize: 18,
+      fontWeight: FontWeight.w700
+    ),
+  );
+}

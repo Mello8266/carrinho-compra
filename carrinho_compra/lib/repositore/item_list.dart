@@ -2,10 +2,12 @@ import 'package:carrinho_compra/modal/item.dart';
 
 // Lista de itens 
 class ItemList{
-  List<Item> itens = [];
   double total = 0;
+  List<Item> itens;
 
-  calcPrice(){
+  ItemList({required this.itens});
+  
+  double calcPrice(){
     for(var i in itens){
       total += i.priceTotal();
     }
