@@ -1,4 +1,5 @@
 import 'package:carrinho_compra/controller/card_screen_control.dart';
+import 'package:carrinho_compra/modal/item.dart';
 import 'package:carrinho_compra/repositore/item_list.dart';
 import 'package:carrinho_compra/widgets/card/card_item.dart';
 import 'package:carrinho_compra/widgets/card/pop_up.dart';
@@ -8,8 +9,10 @@ import 'package:carrinho_compra/widgets/search_bar.dart';
 import 'package:carrinho_compra/widgets/style.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CardScreen extends StatefulWidget {
-  const CardScreen({super.key});
+  List<Item> itemList;
+  CardScreen({super.key, required this.itemList});
 
   @override
   State<CardScreen> createState() => _CardScreenState();
@@ -17,8 +20,14 @@ class CardScreen extends StatefulWidget {
 
 class _CardScreenState extends State<CardScreen> {
   final CardScreenControl controllView = CardScreenControl();
-  final ItemList itemList = ItemList();
+  late List<Item> itemList;
   
+  
+  @override
+  void initState() {
+    super.initState();
+    itemList = widget.itemList;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,11 +57,11 @@ class _CardScreenState extends State<CardScreen> {
             flex: 16,
             child: ListView.builder(
               shrinkWrap: true,
-              itemCount: itemList.itens.length,
+              itemCount: itemList.length,
               itemBuilder: (BuildContext context, int index){
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12),
-                  child: CardItem(item: itemList.itens[index],)
+                  child: CardItem(item: itemList[index],)
                 );
               }
             ),

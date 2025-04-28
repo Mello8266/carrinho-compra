@@ -27,8 +27,13 @@ class PopUp{
                       borderRadius: BorderRadius.circular(16),
                       color: color["backgroundScreen"]
                     ),
-                    child: TextFormField(
-                      
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                        ),
+                      ),
                     ),
                   )
                 ],
@@ -49,8 +54,15 @@ class PopUp{
                       borderRadius: BorderRadius.circular(16),
                       color: color["backgroundScreen"]
                     ),
-                    child: TextFormField(
-                      
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: TextFormField(
+                        keyboardType: TextInputType.number,
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          prefixText: "R\$ "
+                        ),
+                      ),
                     ),
                   )
                 ],
@@ -71,9 +83,14 @@ class PopUp{
                       borderRadius: BorderRadius.circular(16),
                       color: color["backgroundScreen"]
                     ),
-                    child: TextFormField(
-                      decoration: const InputDecoration(
-                        border: InputBorder.none,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: TextFormField(
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.center,
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                        ),
                       ),
                     ),
                   )
