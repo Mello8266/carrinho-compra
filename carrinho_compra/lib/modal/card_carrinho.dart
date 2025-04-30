@@ -20,9 +20,6 @@ class CardCarrinho{
     return format;
   }
 
-  // Mudar essa variável para metodo
-  double? total;
-
   double tot(){
     double total1 = 0;
 
@@ -33,7 +30,7 @@ class CardCarrinho{
     return total1;
   }
 
-  CardCarrinho({this.title, this.total, required this.itens}){
+  CardCarrinho({this.title, required this.itens}){
     title ??= 'Compra de $data';
   }
 }

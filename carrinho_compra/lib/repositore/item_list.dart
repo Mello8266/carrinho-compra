@@ -6,12 +6,4 @@ class ItemList{
   List<Item> itens;
 
   ItemList({required this.itens});
-  
-  double calcPrice(){
-    for(var i in itens){
-      total += i.priceTotal();
-    }
-
-    return total;
-  }
 }

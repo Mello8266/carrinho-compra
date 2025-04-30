@@ -33,10 +33,10 @@ class CardItem extends StatelessWidget{
             SizedBox(width: 25, child: textCard(text: item.totalItens.toString()),),
 
 
-            const SizedBox(width: 95,),
+            const SizedBox(width: 75,),
         
             // Preço
-            SizedBox(width: 65, child: textCard(text: "R\$ ${item.priceTotal.call().toString()}"),)
+            SizedBox(width: 85, child: textCard(text: "R\$ ${item.priceTotal.call().toString()}"),)
           ],
         ),
       ),

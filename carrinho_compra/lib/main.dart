@@ -2,7 +2,7 @@ import 'package:carrinho_compra/view/initial_screen.dart';
 import 'package:carrinho_compra/widgets/style.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 

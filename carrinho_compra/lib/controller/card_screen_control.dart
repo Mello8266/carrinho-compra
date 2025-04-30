@@ -1,4 +1,17 @@
+import 'package:carrinho_compra/modal/item.dart';
+
 class CardScreenControl{
+  double calcPriceTotal({required List<Item> list}){
+    double total = 0;
+
+    for(var i in list){
+      total += i.priceTotal();
+    }
+
+    return total;
+  }
+
+
   // formatar data
   String formatDate(){
     String day = DateTime.now().day.toString();

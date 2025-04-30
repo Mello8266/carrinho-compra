@@ -1,6 +1,7 @@
 import 'package:carrinho_compra/modal/card_carrinho.dart';
 import 'package:carrinho_compra/modal/item.dart';
 import 'package:carrinho_compra/repositore/card_list.dart';
+import 'package:carrinho_compra/repositore/item_list.dart';
 import 'package:carrinho_compra/view/card_screen.dart';
 import 'package:carrinho_compra/widgets/initial/floating_button.dart';
 import 'package:carrinho_compra/widgets/initial/card_initial.dart';
@@ -40,8 +41,8 @@ class _InitialScreenState extends State<InitialScreen> {
       floatingActionButton: FloatingButtonInitial(
         callView: () => Navigator.push(context, 
           MaterialPageRoute(builder: (_) {
-            CardCarrinho newObj = CardCarrinho(itens: <Item>[]);
-            return CardScreen(itemList: newObj.itens,);
+            ItemList newObj = ItemList(itens: []);
+            return CardScreen(itemList: newObj,);
           })
         )
       ),

@@ -1,5 +1,4 @@
 import 'package:carrinho_compra/controller/card_screen_control.dart';
-import 'package:carrinho_compra/modal/item.dart';
 import 'package:carrinho_compra/repositore/item_list.dart';
 import 'package:carrinho_compra/widgets/card/card_item.dart';
 import 'package:carrinho_compra/widgets/card/pop_up.dart';
@@ -11,7 +10,7 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class CardScreen extends StatefulWidget {
-  List<Item> itemList;
+  ItemList itemList;
   CardScreen({super.key, required this.itemList});
 
   @override
@@ -20,7 +19,7 @@ class CardScreen extends StatefulWidget {
 
 class _CardScreenState extends State<CardScreen> {
   final CardScreenControl controllView = CardScreenControl();
-  late List<Item> itemList;
+  late ItemList itemList;
   
   
   @override
@@ -39,7 +38,16 @@ class _CardScreenState extends State<CardScreen> {
         title: textAppBar(text: "Compra de ${controllView.formatDate()}"),
         backgroundColor: color["backgroundCard"],
       ),
-      floatingActionButton: FloatingButtonInitial(callView: () => PopUp.popUp(context),),
+
+      // Adicionar novo item
+      floatingActionButton: FloatingButtonInitial(callView: () {
+        final popUp = PopUp(
+          itens: itemList.itens, 
+          closed: () => Navigator.pop(context),
+        );
+        return popUp.popUp(context);
+      },),
+
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       body: Column(
         children: [
@@ -57,18 +65,18 @@ class _CardScreenState extends State<CardScreen> {
             flex: 16,
             child: ListView.builder(
               shrinkWrap: true,
-              itemCount: itemList.length,
+              itemCount: itemList.itens.length,
               itemBuilder: (BuildContext context, int index){
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12),
-                  child: CardItem(item: itemList[index],)
+                  child: CardItem(item: itemList.itens[index],)
                 );
               }
             ),
           ),
       
           // Preço total
-          PriceWidget(price: 'Preço total: R\$ 1.800',)
+          PriceWidget(price: 'Preço total: R\$ ${controllView.calcPriceTotal(list: itemList.itens)}',)
         ],
       ),
     );

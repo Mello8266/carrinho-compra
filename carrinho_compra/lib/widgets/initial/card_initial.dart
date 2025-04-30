@@ -13,11 +13,11 @@ class Cardinitial extends StatelessWidget{
 
 
   String format(){
-    String nFormat = cardCarrinho.total.toString();
+    String nFormat = cardCarrinho.tot().toString();
 
     nFormat = nFormat.replaceAllMapped('.', (match) => ',');
 
-    if(cardCarrinho.total !> 999){
+    if(cardCarrinho.tot() > 999){
       nFormat = nFormat.replaceRange(1, 1, '.');
     }
 

@@ -7,13 +7,12 @@ class CardList{
   List<CardCarrinho> card = [
     CardCarrinho(
       title: 'compra do mês', 
-      total: 1600, 
       itens: <Item>[]
     )
   ];
 
   // Carregar a lista do JSON
   void initList(){
-
+    
   }
 }
