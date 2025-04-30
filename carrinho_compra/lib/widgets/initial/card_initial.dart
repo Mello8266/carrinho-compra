@@ -1,10 +1,10 @@
-import 'package:carrinho_compra/modal/card_carrinho.dart';
+import 'package:carrinho_compra/modal/compra.dart';
 import 'package:carrinho_compra/widgets/style.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class Cardinitial extends StatelessWidget{
-  CardCarrinho cardCarrinho;
+  Compra cardCarrinho;
   
   Cardinitial({
     required this.cardCarrinho,
@@ -36,7 +36,7 @@ class Cardinitial extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            textCardInitialTittle(text: cardCarrinho.title!),
+            textCardInitialTittle(text: cardCarrinho.tittle!),
         
             Center(child: textCardInitialPrice(text: 'R\$ ${format()}')),
         

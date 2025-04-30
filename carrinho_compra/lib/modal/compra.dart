@@ -1,10 +1,10 @@
-import 'package:carrinho_compra/modal/item.dart';
-
 // Objeto da tela inical que carrega a lista 
-class CardCarrinho{
-  String? title;
-  List<Item> itens;
-  late String data = formatDate();
+class Compra{
+  String tittle;
+  String data;
+  List itens;
+
+  Compra({required this.tittle, required this.data, required this.itens});
 
   String formatDate(){
     String day = DateTime.now().day.toString();
@@ -28,9 +28,5 @@ class CardCarrinho{
     }
 
     return total1;
-  }
-
-  CardCarrinho({this.title, required this.itens}){
-    title ??= 'Compra de $data';
   }
 }

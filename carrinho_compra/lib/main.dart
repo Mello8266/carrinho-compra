@@ -1,8 +1,13 @@
+import 'package:carrinho_compra/config/hive_config.dart';
 import 'package:carrinho_compra/view/initial_screen.dart';
 import 'package:carrinho_compra/widgets/style.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await HiveConfig.start();
+
   runApp(const MyApp());
 }
 
