@@ -76,7 +76,7 @@ class _CardScreenState extends State<CardScreen> {
           ),
       
           // Preço total
-          PriceWidget(price: 'Preço total: R\$ ${controllView.calcPriceTotal(list: itemList.itens)}',)
+          PriceWidget(price: 'Preço total: R\$ ${controllView.formatNum(n: controllView.calcPriceTotal(list: itemList.itens))}',)
         ],
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:carrinho_compra/controller/card_screen_control.dart';
 import 'package:carrinho_compra/modal/item.dart';
 import 'package:carrinho_compra/widgets/style.dart';
 import 'package:flutter/cupertino.dart';
@@ -5,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 // ignore: must_be_immutable
 class CardItem extends StatelessWidget{
   Item item;
+  final cardScreenControl = CardScreenControl();
 
   CardItem({required this.item, super.key});
 
@@ -36,7 +38,7 @@ class CardItem extends StatelessWidget{
             const SizedBox(width: 75,),
         
             // Preço
-            SizedBox(width: 85, child: textCard(text: "R\$ ${item.priceTotal.call().toString()}"),)
+            SizedBox(width: 85, child: textCard(text: "R\$ ${cardScreenControl.formatNum(n: item.priceTotal.call())}"),)
           ],
         ),
       ),

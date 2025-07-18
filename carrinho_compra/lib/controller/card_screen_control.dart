@@ -27,5 +27,11 @@ class CardScreenControl{
     return format;
   }
 
+  // Formatar num
+  String formatNum({required double n}){    
+    String f = n.toStringAsFixed(2).replaceAll('.', ',');
+    return f;
+  }
+
 
 }
