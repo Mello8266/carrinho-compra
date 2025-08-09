@@ -1,3 +1,4 @@
+import 'package:carrinho_compra/controller/controll_view.dart';
 import 'package:carrinho_compra/repositore/card_list.dart';
 import 'package:carrinho_compra/repositore/item_list.dart';
 import 'package:carrinho_compra/view/card_screen.dart';
@@ -16,6 +17,7 @@ class InitialScreen extends StatefulWidget {
 
 class _InitialScreenState extends State<InitialScreen> {
   final CardList cardList = CardList();
+  final controll = ControllView();
 
   @override
   void initState() {
@@ -40,7 +42,7 @@ class _InitialScreenState extends State<InitialScreen> {
         callView: () => Navigator.push(context, 
           MaterialPageRoute(builder: (_) {
             ItemList newObj = ItemList(itens: []);
-            return CardScreen(itemList: newObj,);
+            return CardScreen(itemList: newObj, appBarName: 'Compra de ${controll.formatDate()}',);
           })
         )
       ),

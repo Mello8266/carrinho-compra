@@ -1,6 +1,8 @@
+import 'package:carrinho_compra/controller/controll_view.dart';
 import 'package:carrinho_compra/modal/item.dart';
+import 'package:flutter/material.dart';
 
-class CardScreenControl{
+class CardScreenControl extends ControllView{
   double calcPriceTotal({required List<Item> list}){
     double total = 0;
 
@@ -11,27 +13,26 @@ class CardScreenControl{
     return total;
   }
 
+  // Botão editar nome
+  showInputDialog(BuildContext context){
+    TextEditingController txtControll = TextEditingController();
 
-  // formatar data
-  String formatDate(){
-    String day = DateTime.now().day.toString();
-    String month = DateTime.now().month.toString();
-    String year = DateTime.now().year.toString();
+    showDialog(context: context, builder: (context){
+      return AlertDialog(
+        title: const Text('Alterar título'),
+        content: TextFormField(
+          controller: txtControll,
+        ),
+        actions: [
+          TextButton(onPressed: (){
+            Navigator.of(context).pop();
+          }, child: const Text("Cancelar")),
 
-    if (month.length < 2){
-      month = '0$month';
-    }
-
-    String format = '$day/$month/$year';
-
-    return format;
+          TextButton(onPressed: (){
+            Navigator.pop(context);
+          }, child: const Text("Salvar"))
+        ],
+      );
+    });
   }
-
-  // Formatar num
-  String formatNum({required double n}){    
-    String f = n.toStringAsFixed(2).replaceAll('.', ',');
-    return f;
-  }
-
-
 }

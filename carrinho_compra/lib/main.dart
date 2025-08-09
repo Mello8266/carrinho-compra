@@ -18,6 +18,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        hintColor: Colors.black,
+        focusColor: Colors.black,
         scaffoldBackgroundColor: color["backgroundScreen"],
         primarySwatch: Colors.grey,
         textSelectionTheme: const TextSelectionThemeData(
