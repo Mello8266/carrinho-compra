@@ -1,0 +1,44 @@
+[
+    {
+        "tittle": "Compra de 28/04/2025",
+        "data": "28/04/2025",
+        "itens": [
+            {
+                "name": "carne",
+                "price": 52.38,
+                "totalItens": 2
+            },
+            {
+                "name": "arroz",
+                "price": 43.0,
+                "totalItens": 1
+            },
+            {
+                "name": "feijão",
+                "price": 8.59,
+                "totalItens": 2
+            }
+        ]      
+    },
+    {
+        "tittle": "Feira",
+        "data": "23/04/2025",
+        "itens": [
+            {
+                "name": "tomate",
+                "price": 5.00,
+                "totalItens": 1
+            },
+            {
+                "name": "paste",
+                "price": 10,
+                "totalItens": 1
+            },
+            {
+                "name": "alho",
+                "price": 8.50,
+                "totalItens": 2
+            }
+        ]       
+    }
+]

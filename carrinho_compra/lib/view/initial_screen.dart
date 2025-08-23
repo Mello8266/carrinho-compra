@@ -1,6 +1,6 @@
-import 'package:carrinho_compra/modal/card_carrinho.dart';
-import 'package:carrinho_compra/modal/item.dart';
+import 'package:carrinho_compra/controller/controll_view.dart';
 import 'package:carrinho_compra/repositore/card_list.dart';
+import 'package:carrinho_compra/repositore/item_list.dart';
 import 'package:carrinho_compra/view/card_screen.dart';
 import 'package:carrinho_compra/widgets/initial/floating_button.dart';
 import 'package:carrinho_compra/widgets/initial/card_initial.dart';
@@ -17,12 +17,13 @@ class InitialScreen extends StatefulWidget {
 
 class _InitialScreenState extends State<InitialScreen> {
   final CardList cardList = CardList();
-  late List<CardCarrinho> list;
+  final controll = ControllView();
 
   @override
   void initState() {
     super.initState();
-    list = cardList.card;
+    cardList.addListener(() {setState(() {}); });
+    cardList.startRepository();
   }
 
   @override
@@ -40,8 +41,8 @@ class _InitialScreenState extends State<InitialScreen> {
       floatingActionButton: FloatingButtonInitial(
         callView: () => Navigator.push(context, 
           MaterialPageRoute(builder: (_) {
-            CardCarrinho newObj = CardCarrinho(itens: <Item>[]);
-            return CardScreen(itemList: newObj.itens,);
+            ItemList newObj = ItemList(itens: []);
+            return CardScreen(itemList: newObj, appBarName: 'Compra de ${controll.formatDate()}',);
           })
         )
       ),
@@ -57,13 +58,13 @@ class _InitialScreenState extends State<InitialScreen> {
         
             // Cards
             Expanded(flex: 11, child: GridView.builder(
-              itemCount: list.length,
+              itemCount: cardList.list.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount (crossAxisCount: 2),
               itemBuilder: (context, index){
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Cardinitial(
-                    cardCarrinho: list[index],
+                    cardCarrinho: cardList.list[index],
                   ),
                 );
               }

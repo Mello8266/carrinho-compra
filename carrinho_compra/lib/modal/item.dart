@@ -1,21 +1,24 @@
 // Item individual
-
 class Item{
+  // Dados e seu index
   String name;
-  int totalItens;
   double price;
+  int totalItens;
 
+  // Construtor
   Item({
     required this.name,
     required this.totalItens,
     required this.price,
   });
 
+  // Calcular preço
   double priceTotal(){
     return totalItens * price;
   }
 
-  void change(String? name, int? totalItens, double? price){
+  // Metodo para mudar os dados
+  void change({String? name, int? totalItens, double? price}){
     if(name != null){
       this.name = name;
     }
