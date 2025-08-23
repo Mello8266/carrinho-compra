@@ -6,7 +6,9 @@ import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 
 class CardList extends ChangeNotifier{
-  List<Compra> list = [];
+  List<Compra> list = [
+    Compra(tittle: 'Feira', data: '02/08/2025', itens: [])
+  ];
   late Box box;
 
   Future<void> startRepository() async{

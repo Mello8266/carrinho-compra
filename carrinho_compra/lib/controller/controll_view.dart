@@ -21,6 +21,11 @@ class ControllView{
   // Formatar num
   String formatNum({required double n}){    
     String f = n.toStringAsFixed(2).replaceAll('.', ',');
+
+    if(n > 999){
+      f = f.replaceRange(1, 1, '.');
+    }
+
     return f;
   }
 }
