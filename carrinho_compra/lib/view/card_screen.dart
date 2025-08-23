@@ -82,6 +82,7 @@ class _CardScreenState extends State<CardScreen> {
         final popUp = PopUp(
           itens: itemList.itens, 
           closed: () => Navigator.pop(context),
+          function: 'add'
         );
         return popUp.popUp(context);
       },),
@@ -107,7 +108,7 @@ class _CardScreenState extends State<CardScreen> {
               itemBuilder: (BuildContext context, int index){
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12),
-                  child: CardItem(item: itemList.itens[index],)
+                  child: CardItem(item: itemList.itens[index], itens: itemList.itens,)
                 );
               }
             ),

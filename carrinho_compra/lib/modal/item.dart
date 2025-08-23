@@ -18,7 +18,7 @@ class Item{
   }
 
   // Metodo para mudar os dados
-  void change(String? name, int? totalItens, double? price){
+  void change({String? name, int? totalItens, double? price}){
     if(name != null){
       this.name = name;
     }
